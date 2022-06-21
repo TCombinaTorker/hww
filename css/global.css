@@ -1,0 +1,203 @@
+/* The navigation menu */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    background-color: rgb(75, 73, 73);
+}
+
+.row {
+    margin: auto;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-bottom: 1px solid gray;
+}
+
+.name {
+    text-align: center;
+}
+
+#pp {
+    max-width: 80%;
+    max-height: 28rem;
+    height: auto;
+    border-radius: 100%;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+
+/* Navigation links */
+
+.navbar a {
+    float: left;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+/* The subnavigation menu */
+
+.subnav {
+    float: left;
+    overflow: hidden;
+}
+
+
+/* Subnav button */
+
+.subnav .subnavbtn {
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+}
+
+
+
+/* Add a red background color to navigation links on hover */
+
+.navbar a:hover,
+.subnav:hover .subnavbtn {
+    background-color: rgba(14, 189, 14, 0.877);
+    border-bottom: 20px;
+}
+
+
+/* Style the subnav content - positioned absolute */
+
+.subnav-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: rgb(75, 73, 73);
+    width: 100%;
+    z-index: 1;
+}
+
+
+/* Style the subnav links */
+
+.subnav-content button {
+    font-size: 18px;
+    background-color: rgb(75, 73, 73);
+    float: left;
+    color: rgba(255, 255, 255, 0.877);
+    text-decoration: none;
+    padding: 0.5rem;
+    border-color: rgba(14, 189, 14, 0.877);
+    margin: 1rem;
+}
+
+.subnav-content button:hover {
+    font-size: 22px;
+    padding: 0.6rem;
+    transition-duration: 0.8s;
+    color: rgb(255, 255, 255);
+    background-color: #333;
+    display: flex;
+}
+
+
+/* Add a grey background color on hover */
+
+.subnav-content a:hover {
+    background-color: rgba(14, 189, 14, 0.877);
+    color: black;
+}
+
+
+/* When you move the mouse over the subnav container, open the subnav content */
+
+.subnav:hover .subnav-content {
+    display: block;
+}
+
+.leftcolumn {
+    float: left;
+    width: 75%;
+}
+
+
+/* Right column */
+
+.rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+}
+
+
+/* Add a card effect for articles */
+
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Footer */
+
+.footer {
+    padding: 1%;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+}
+
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 800px) {
+    .leftcolumn,
+    .rightcolumn {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+}
+
+.parser {
+    padding-left: 10%;
+    padding-right: 10%;
+}

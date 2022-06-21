@@ -1,0 +1,20 @@
+#container {
+    color: rgb(255, 255, 255);
+    border-style: outset;
+    border-width: 0.5rem;
+    margin: 5rem auto 7rem;
+    left: auto;
+    padding: 2rem;
+    border-radius: 5%;
+    border-color: rgba(14, 189, 14, 0.877);
+    position: relative;
+    width: 60%;
+    align-items: center;
+    background-color: rgba(14, 189, 14, 0.061);
+}
+
+
+
+hr {
+    padding-bottom: 0.3rem;
+}
