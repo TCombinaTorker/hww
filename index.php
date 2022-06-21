@@ -10,14 +10,40 @@
 <body>
 <?php
 
-
+      if(isset($_GET['p']))
+      {
       $page       = $_GET['p'];  //page title
+      } else {
+        $page = "";
+      }
+      if(isset($_GET['n']))
+      {      
       $pageNum    = $_GET['n'];  //page subtitle
+      }else {
+        $pageNUm = "";
+      }
+      if(isset($_POST['message']))
+      {
       $m          = $_POST['message'];  //message from client
+      } else {
+        $m = "";
+      }
+      if(isset($_POST['name']))
+      {
       $name       = $_POST['name'];  //message from client
-      $mail       = $_POST['mail'];  //message from client
-      $subject    = $_POST['subject'];  //message from client
-
+      } else {
+        $name = "pages/error.php";
+      }
+      if(isset($_POST['mail']))
+      {
+        $mail       = $_POST['mail'];  //message from client
+      } else {
+        $mail = "";
+      }
+        if(isset($_POST['subject']))
+      {
+        $subject    = $_POST['subject'];
+        }  //message from client
 
     if ($page == "home" || $page == "") 
     {                //homepage
