@@ -32,18 +32,17 @@ form {
 <div id="contact" class="contain">
 
 
-<h1> Send me a message
-
+<h1> Mesaj Gonder
 <form method="post">
 
 
-<label for="name">Name:</label>
-<input name="name" type="text" id ="name" placeholder="Name">
+<label for="name">Ad:</label>
+<input name="name" type="text" id ="Ad" placeholder="Ad">
 </input>
 
 
-<label for="subject">Subject:</label>
-<input name="subject" id="subject" type="text" placeholder="Subject">
+<label for="subject">Konu:</label>
+<input name="subject" id="subject" type="text" placeholder="Konu">
 </input>
 <br>
 
@@ -52,10 +51,10 @@ form {
 </input>
 <br>
 <label for="message"> Message </label><br>
-<textarea name="message" id="message" rows="8" cols="30" placeholder="Enter a message here.">
+<textarea name="message" id="message" rows="8" cols="30" placeholder="Mesaj giriniz.">
 </textarea>
 
-<input value="send" type="submit" ></input>
+<input value="gonder" type="submit" ></input>
 
 </form>
 

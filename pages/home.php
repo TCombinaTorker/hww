@@ -2,15 +2,12 @@
 
     <section id="home">
         <img id="pp"
-            src="/images/pp.jpeg"
+            src="/images/logo2.png"
             alt="Türker Han">
     </section>
 
     <div class="name">
-        <h2>Türker HAN</h2>
-        <p>Information Scientist | Computational Linguistician</p>
-        <a href="#git" style="color: rgba(14, 189, 14, 0.877);">Visit Git Page</a>
-
+        <h2>HW&A</h2>
     </div>
 
 </div>

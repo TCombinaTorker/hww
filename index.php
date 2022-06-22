@@ -2,13 +2,17 @@
 <html lang="en">
 
 <head>
-    <?php $head    = file_get_contents("head.php");
-          print $head; 
+    <?php
+        session_start();
+
+        $head    = file_get_contents("head.php");
+        print $head;
     ?>
 </head>
 
 <body>
 <?php
+
 
       if(isset($_GET['p']))
       {
@@ -40,10 +44,31 @@
       } else {
         $mail = "";
       }
-        if(isset($_POST['subject']))
+        if(isset($_POST['urun']))
       {
-        $subject    = $_POST['subject'];
+        $urun    = $_POST['urun'];
         }  //message from client
+
+
+        
+        if(isset($_POST['password']))
+        {
+        $_SESSION['password'] = $_POST['password'];  //page title
+        } else {
+        $_SESSION['password'] = "";
+        }
+        if(isset($_POST['username']))
+        {
+        $_SESSION['username'] = $_POST['username'];  //page title
+        } else {
+        $_SESSION['username'] = "";
+        }
+      $username1 = "tuerker";
+      $password1 = "admin123";
+
+
+
+
 
     if ($page == "home" || $page == "") 
     {                //homepage
@@ -51,27 +76,28 @@
     }elseif ($m != "") {
             $page = "pages/message.php";
             $message = fopen("messages/" . $name . date("Y-m-d h:i:sa") . ".txt", "w") or die("Unable to open file!");;
-            fwrite($message, "Name:" . $name . "\nSubject:" . $subject . "\nE-Mail:" . $mail . "\nDate:" . date("d-m-y:l") . date("h:i:sa") . "\n \n Message:" . $m);
+            fwrite($message, "Name:" . $name . "\nSubject:" . $urun . "\nE-Mail:" . $mail . "\nDate:" . date("d-m-y:l") . date("h:i:sa") . "\n \n Message:" . $m);
             fclose($message);
-    }elseif ($page == 'subjects'){        //subjects
-            $page = "pages/subjects.php";
+    }elseif ($page == 'admin'){           //   Admin
+        if ($_SESSION['username'] == $username1 && ($_SESSION['password'] == $password1)) {
+        $page  = "pages/panel.php";
+    } else {$page  = "pages/login.php";}
+        
+    }elseif ($page == 'urun'){        //subjects
+            $page = "pages/urunler.php";
     }elseif ($page == 'cv'){              //cv
             $page = "pages/cv.php";
     }elseif ($page == 'about'){           //about
             $page = "pages/about.php";    
     }elseif ($page == 'contact'){         //contact
             $page = "pages/contact.php";
-    }elseif ($page == 'func'){            //  subjects/func
-            $page = "pages/subjects/functional/" . $pageNum . ".php";
-    }elseif ($page == 'cla'){             //  subjects/cla
-            $page = "pages/subjects/cla/" . $pageNum . ".php";
-    }elseif ($page == 'ir'){             //   subjects/ir
-            $page  = "pages/subjects/ir/" . $pageNum . ".php";
-    }elseif ($page == 'crypt'){           //   subjects/math
-            $page  = "pages/subjects/crypt/" . $pageNum . ".php";
-    }elseif ($page == 'math'){           //   subjects/math
-        $page  = "pages/subjects/math/" . $pageNum . ".php";
-    }else {
+    }elseif ($page == 'kereste'){             //  subjects/cla
+            $page = "pages/urun/keresteler/" . $pageNum . ".php";
+    }elseif ($page == 'mutfak'){             //   subjects/ir
+            $page  = "pages/urun/mutfak/" . $pageNum . ".php";
+    }elseif ($page == 'sunum'){           //   subjects/math
+            $page  = "pages/urun/sunum/" . $pageNum . ".php";
+    } else {
             $page = "pages/error.php";
         }
 
